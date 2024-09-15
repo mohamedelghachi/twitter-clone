@@ -110,7 +110,7 @@ export const likeUnlikePost = async (req, res) => {
       const newNotification = new Notification({
         type: "like",
         from: userId,
-        to: post._id,
+        to: post.user,
       });
       await newNotification.save();
 
