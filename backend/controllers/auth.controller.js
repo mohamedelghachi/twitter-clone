@@ -90,9 +90,9 @@ export const logout = async (req,res)=> {
     try{
         res.cookie("jwt","",{maxAge:0})
         res.status(200).json({message:"Logged out successfully"})
-        const {username,password} = req.body;
-        const user = await User.findOne({username});
-        const isPasswordCorrect = await bcrypt.compare(password, user?.password || "")
+        // const {username,password} = req.body;
+        // const user = await User.findOne({username});
+        // const isPasswordCorrect = await bcrypt.compare(password, user?.password || "")
 
     }
     catch(error){
