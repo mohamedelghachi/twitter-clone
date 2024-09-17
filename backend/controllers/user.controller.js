@@ -104,7 +104,7 @@ export const updateUserProfile = async (req, res) => {
     if (currentPassword && newPassword) {
       const isMatch = await bcrypt.compare(currentPassword, user.password);
       if (!isMatch)
-        res.status(400).json({ error: "Current password is incorrect" });
+        return res.status(400).json({ error: "Current password is incorrect" });
       if (newPassword.length < 6) {
         return res
           .status(400)
