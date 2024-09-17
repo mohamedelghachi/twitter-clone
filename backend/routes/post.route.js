@@ -4,7 +4,7 @@ import {protectRoute} from "../middleware/protectRoute.js";
 const router = express.Router();
 
 router.get("/all",protectRoute,getAllPosts)
-router.get("/userposts",protectRoute,getUserPosts)
+router.get("/user/:username",protectRoute,getUserPosts)
 router.get("/likes/:id",protectRoute,getLikedPosts)
 router.get("/following",protectRoute,getFollowingPosts)
 router.post("/create",protectRoute,createPost)
